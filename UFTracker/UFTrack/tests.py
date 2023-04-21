@@ -56,7 +56,7 @@ class TestUFDetailAPIView(TestCase):
         error_string = ('["The UF value is not available for the specified '
                         'date. Please check again on the 9th day of the '
                         'month when the value could be set."]')
-    
+
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(response.content.decode('utf-8'), error_string)
@@ -64,7 +64,9 @@ class TestUFDetailAPIView(TestCase):
     def test_invalid_date_format(self):
         url1 = self.url + '21-14-2024/'
         url2 = self.url + 'wrongdate/'
-        error_string = ('["Date must be in the format DD-MM-YYYY"]')
+        error_string = (
+            '["Date must be in the format DD-MM-YYYY or the specific date for '
+            'the month dont exist."]')
 
         response = self.client.get(url1)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)

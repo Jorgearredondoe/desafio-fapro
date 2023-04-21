@@ -11,8 +11,8 @@ message_string = {
                         'could be set.'),
         },
         'date': {
-            'format_error': ("Date must be in the format DD-MM-YYYY or"
-                             "the specific date for the month don't exist."),
+            'format_error': ("Date must be in the format DD-MM-YYYY or "
+                             "the specific date for the month dont exist."),
         }
     },
 }
