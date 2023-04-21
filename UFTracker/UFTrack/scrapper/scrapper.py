@@ -44,12 +44,21 @@ class UFEndpoint():
                 self.uf_list.append({'value': uf[month], 'date': date_obj})
 
 
-def Update_DB():
-    year = '2023'
-    UF_object = UFEndpoint(year)
-    UF_object.scrap_data()
-    UF_object.data_serializer()
-    UF_object.clean_uf_values()
-    for i in UF_object.uf_list:
-        new_model_data = UF(value=i['value'], date=i['date'])
-        new_model_data.save()
+def Update_DB(year='2023'):
+    try:
+        UF_object = UFEndpoint(year)
+        UF_object.scrap_data()
+        UF_object.data_serializer()
+        UF_object.clean_uf_values()
+        count = 0
+        for i in UF_object.uf_list:
+            try:
+                new_model_data = UF(value=i['value'], date=i['date'])
+                new_model_data.full_clean()
+                new_model_data.save()
+                count += 1
+            except Exception:
+                pass
+        print(f'Year: {year}. Successfully Scrapped {count} UFs')
+    except Exception as e:
+        print(f'Error with Webscrapper: {e}')
