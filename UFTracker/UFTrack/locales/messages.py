@@ -9,6 +9,9 @@ message_string = {
                         'Please check again on the 9th day '
                         'of the month when the value '
                         'could be set.'),
+        },
+        'date': {
+            'format_error': 'Date must be in the format DD-MM-YYYY',
         }
     },
 }

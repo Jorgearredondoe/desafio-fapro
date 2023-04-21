@@ -11,6 +11,6 @@ urlpatterns = [
     path('uf/<str:date>/',
          view.UFDetailAPIView.as_view(),
          name='UFDetail'),
-    path('', include(router.urls)),
 
+    path('', include(router.urls)),
 ]

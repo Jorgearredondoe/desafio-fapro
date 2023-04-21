@@ -51,9 +51,9 @@ def Update_DB(year='2023'):
         UF_object.data_serializer()
         UF_object.clean_uf_values()
         count = 0
-        for i in UF_object.uf_list:
+        for uf_element in UF_object.uf_list:
             try:
-                new_model_data = UF(value=i['value'], date=i['date'])
+                new_model_data = UF(value=uf_element['value'], date=uf_element['date'])
                 new_model_data.full_clean()
                 new_model_data.save()
                 count += 1
