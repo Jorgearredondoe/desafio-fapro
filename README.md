@@ -61,3 +61,7 @@ To run the Unit Tests you must be located in the `desafio-fapro\UFTracker` direc
   python3 manage.py test
 ```
 If everything is working OK the 8 tests should run without problem 👍
+
+
+#IMPORTANT DON'T USE THIS PROJECT IN PRODUCTION
+This code was made with the intention to run locally only, because the SECRET_KEY for the django project is public in this repository
