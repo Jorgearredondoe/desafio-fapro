@@ -46,11 +46,13 @@ Now that the app is running you can manually access the different endpoints avai
 - Uf Detail Api: `http://127.0.0.1:8000/uf/DD-MM-YYYY/`
 
 For the Uf Detail Api the date must be in the format `DD-MM-YYYY` to receive a `200` Response.
-The Uf List will not show any data unless the Uf Detail Api endpoint is called first. This is because the scrapper (beautifulsoup4) will search and update the database with the whole year of uf data of the year that is requested. For example:
+The Uf List will not show any data unless the Uf Detail Api endpoint is called first. This is because the scrapper (beautifulsoup4) will search and update the database with the whole year of UF data of the year that is requested.
+
+For example:
 
 I request `http://127.0.0.1:8000/uf/01-02-2022` and the scrapper will search for the data and update the django UF table with the whole year 2022. Now i can request `http://127.0.0.1:8000/uf/` and it will list the data of year 2022 (and the other data that already was stored in the table). If i do a request for the same year (`http://127.0.0.1:8000/uf/20-06-2022`) the scrapper will not search for the data again, because it already exists in the database.
 
-I included a Postman Collection named `UF-Endpoints.postman_collection.json` that can be imported in Postman and used to request the API (Remember to run it to try this examples).
+Also I included a Postman Collection named `UF-Endpoints.postman_collection.json` that can be imported in Postman and used to request the API (Remember to run the app to try this examples).
 
 Now Enjoy 😎
 
