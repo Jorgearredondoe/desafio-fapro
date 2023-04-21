@@ -5,7 +5,7 @@ from UFTrack.api import views as view
 
 
 router = DefaultRouter()
-router.register(r'uf', view.UFView)
+router.register(r'uf', view.UFView, basename='uf')
 
 urlpatterns = [
     path('uf/<str:date>/',
