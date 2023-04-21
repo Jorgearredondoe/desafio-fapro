@@ -1,8 +1,6 @@
 # Fapro Challenge
 ### Author: Jorge Arredondo Esparza
 
-### Email: jorge.arredondo.e@gmail.com
-
 This challenge consists in the creation of an API that with a specific date can give you the value of the UF for that date. Instructions for the Challenge [HERE](https://gist.github.com/lhidalgo42/47c2c1ea4ddbfd50e4b0acd82c24bc23).
 
 ### To run this project:
